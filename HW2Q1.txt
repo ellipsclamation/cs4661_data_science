@@ -1,0 +1,54 @@
+Justin Sarenas 304675389
+Henry Ho 304723723
+
+1.
+  7 Sunny 7 Rainy
+  Entropy Before Split: -((7/14)log(2,7/14)+(7/14)log(2,7/14)) = 1 bit
+
+  Split based on Wind
+  Windy - 1 Sunny 5 Rainy
+  Not Windy - 6 Sunny 2 Rainy
+
+  Windy: -((1/6)log(2,1/6)+(5/6)log(2,5/6)) = .65 bit
+  Not Windy: -((6/8)log(2,6/8)+(2/8)log(2,2/8)) = .81 bit
+
+  Average: ((6/14)*.65+(8/14)*.81) = .74 bit
+
+  Split based on Humidity
+  High Humidity - 1 Sunny 4 Rainy
+  Mild Humidity  - 3 Sunny 2 Rainy
+  Low Humidity - 3 Sunny 1 Rainy
+
+  High Humidity: -((1/5)log(2,1/5)+(4/5)log(2,4/5)) = .72 bit
+  Mild Humidity: -((3/5)log(2,3/5)+(2/5)log(2,2/5)) = .97 bit
+  Low Humidity: -((3/4)log(2,3/4)+(1/4)log(2,1/4)) = .81 bit
+
+  Average: ((5/14)*.72+(5/14)*.97+4(1/14)*.81) = .83 bit
+
+  Split based on Temperature
+  High Temperature - 5 Sunny 0 Rainy
+  Mild Temperature - 2 Sunny 1 Rainy
+  Low Temperature - 0 Sunny 5 Rainy
+
+  High Temperature: -((5/5)log(2,5/5)+(0/5)log(2,0/5)) = 0 bit
+  Mild Temperature: -((2/4)log(2,2/4)+(2/4)log(2,2/4)) = 1 bit
+  Low Temperature: -((0/5)log(2,0/5)+(5/5)log(2,5/5)) = 0 bit
+
+  Average = ((5/14)*0+(4/14)*1+(5/14)*0) = .28 bit
+
+  Windy:
+  Entropy before Split - 1 bit
+  Entropy after Split - .74 bit
+  Information Gain: 1  - .74  = .26
+
+  Humidity:
+  Entropy before Split - 1 bit
+  Entropy after Split - .83 bit 
+  Information Gain: 1  - .83  = .17
+
+  Temperature:
+  Entropy before Split - 1 bit
+  Entropy after Split - .28 bit
+  Information Gain: 1 - .28 = .72
+
+  Temperature is the best feature to use in top of the tree.
